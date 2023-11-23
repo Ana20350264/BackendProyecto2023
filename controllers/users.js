@@ -2,6 +2,9 @@ const { request, response } = require('express');
 const usersModel = require('../models/users');
 const pool = require('../db');
 
+
+/* #####################################  LISTADO TODOS  ####################################################3*/  
+
 const listUsers = async (req = request, res = response) => {
   let conn;
   try {
@@ -19,6 +22,8 @@ const listUsers = async (req = request, res = response) => {
     if (conn) conn.end();
   }
 }
+
+/* #####################################  LISTADO POR ID  ####################################################3*/  
 
 const listUserByID = async (req = request, res = response) => {
     const {id} = req.params;
@@ -50,19 +55,35 @@ const listUserByID = async (req = request, res = response) => {
         if (conn) conn.end();
     }
 }
-/*
-{
-    username: 'admin',
-    email: 'admin@example.com',
-    password: '123',
-    name: 'Administrador',
-    lastname: 'Del Sitio',
-    phone_number: '5555',
-    role_id: '1',
-    is_active: '1'
-}
-*/ 
 
+const nameSearch = async (req = request, res = response) => {
+  
+  const { author } = req.params;
+
+  if (!author) {
+    res.status(400).json({ msg: 'Author parameter is required' });
+    return;
+  }
+
+  let conn;
+
+  try {
+    conn = await pool.getConnection();
+    const authors = await conn.query(usersModel.getByName, [author]);
+    
+    if (!authors || authors.length === 0) {
+      res.status(404).json({ msg: `Author not found with this name: ${author}` });
+      return;
+    }
+
+    res.json({ msg: 'RESULT:', authors });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  } finally {
+    if (conn) conn.end();
+  }
+}
 /*
             Book = ?,
             Author(s) = ?,
@@ -72,6 +93,7 @@ const listUserByID = async (req = request, res = response) => {
             Genre = ?
 */
 
+/* #####################################  AGREGAR  ####################################################3*/  
 
 const addUser = async (req = request, res = response) => {
 
@@ -81,15 +103,13 @@ const addUser = async (req = request, res = response) => {
     Original_language,
     First_published,
     Approximate_sales_in_millions,
-    Genre = '',
+    Genre = ''
 } = req.body;
 
 if (!Book || !Authors || !Original_language || !First_published || !Approximate_sales_in_millions || !Genre) {
     res.status(400).json({msg: 'Missing information'});
     return;
 }
-
-const saltRounds = 10;
 
 const user = [Book, Authors, Original_language, First_published, Approximate_sales_in_millions, Genre];
 
@@ -98,29 +118,21 @@ const user = [Book, Authors, Original_language, First_published, Approximate_sal
     try {
         conn = await pool.getConnection();
 
-        const [usernameUser] = await conn.query(
-            usersModel.getByUsername,
+        const [bookito] = await conn.query(
+            usersModel.getByExist,
             [Book],
             (err) => {if (err) throw err;}
         );
-        if (usernameUser) {
-            res.status(409).json({msg: `Book ${Book} alredy exist`});
-            return;
-        }
 
-        const [emailUser] = await conn.query(
-            usersModel.getByEmail,
-            [Authors],
-            (err) => {if (err) throw err;}
-        );
-        if (emailUser) {
-            res.status(409).json({msg: `Author ${Authors} alredy exist`});
-            return;
-        }
+        if (bookito) {
+          res.status(409).json({ msg: `Book with name ${Book} already exists` });
+          return;
+      }
 
         const userAdded= await conn.query(usersModel.addRow, [...user], (err) => {
             if (err) throw err;
         });
+
         if (userAdded.affectedRows == 0) throw new Error ({message: 'Failed to add user'});
         res.json({msg:'User added succesfully'});
     } catch (error) {
@@ -131,17 +143,14 @@ const user = [Book, Authors, Original_language, First_published, Approximate_sal
     }
   }
 
-//incia movida    
+/* #####################################  UPDATE  ####################################################3*/  
 const updateUser = async (req = request, res = response) => {
-  let conn;
-  const { id } = req.params;
+  let conn; //variable 'conn' para almacenar una conexión a la bd
 
-  if (isNaN(id)) {
-    res.status(400).json({ msg: 'Invalid ID' });
-    return;
-  }
+  //Extrae el parámetro 'character_name' de la solicitud HTTP
+  const { id } = req.params; //id
 
-  const {
+  const { //Extrae los datos actualizados del personaje del body
     Book,
     Authors,
     Original_language,
@@ -150,64 +159,69 @@ const updateUser = async (req = request, res = response) => {
     Genre
   } = req.body;
 
-  let user = {
-    Book,
-    Authors,
-    Original_language,
-    First_published,
-    Approximate_sales_in_millions,
-    Genre
-  };
+  let book = [ //arreglo 'character' con los datos actualizados del personaje.
+  Book,
+  Authors,
+  Original_language,
+  First_published,
+  Approximate_sales_in_millions,
+  Genre
+  ];
 
   try {
-    conn = await pool.getConnection();
+      conn = await pool.getConnection(); // conexión a la base de datos utilizando el objeto 'pool
 
-    const [userExist] = await conn.query(
-      usersModel.getByID,
-      [id]
-    );
+      //verificar si el personaje con el id proporcionado existe.
+      const [bookExists] = await conn.query(
+          usersModel.getByID,
+          [id],
+          (err) => { throw err; }
+      );
 
-    const [usernameUser] = await conn.query(
-      usersModel.getByUsername,
-      [Book]
-    );
-
-    const [emailUser] = await conn.query(
-      usersModel.getByEmail,
-      [Authors]
-    );
-
-    let oldUser = {
-      Book: userExist.Book,
-      Authors: userExist.Authors,
-      Original_language: userExist.Original_language,
-      First_published: userExist.First_published,
-      Approximate_sales_in_millions: userExist.Approximate_sales_in_millions,
-      Genre: userExist.Genre
-    };
-
-    for (const prop in user) {
-      if (!user[prop]) {
-        user[prop] = oldUser[prop];
+      //Si el personaje no existe, devuelve un mensaje indicando que el personaje no se encontró
+      if (!bookExists) {
+          res.status(404).json({ msg: 'Book not found' });
+          return;
       }
-    }
+      
+          //arreglo 'oldCharacter
+      let oldBook = [ //muestra los datos actuales del personaje antes de la actualización
+        bookExists.Book,
+        bookExists.Authors,
+        bookExists.Original_language,
+        bookExists.First_published,
+        bookExists.Approximate_sales_in_millions,
+        bookExists.Genre
+      ];
 
-    await conn.query(
-      usersModel.updateRow,
-      [user.Book, user.Authors, user.Original_language, user.First_published, user.Approximate_sales_in_millions, user.Genre, id]
-    );
+      //Reemplaza los datos actualizados con los datos antiguos si los datos actualizados son nulos
+      book.forEach((bookData, index) => {
+          if (!bookData) {
+              book[index] = oldBook[index];
+          }
+      });
 
-    res.json({ msg: 'User updated successfully' });
+      //consulta SQL para actualizar el personaje con los datos proporcionados
+      const bookUpdated = await conn.query(usersModel.updateRow, [...book, id], (err) => {
+          if (err) throw err;
+      });
+
+      //Si la consulta no afecta ninguna fila, se lanza un error indicando que el personaje no se actualizó.
+      if (bookUpdated.affectedRows === 0) {
+          throw new Error('Book not updated');
+      }
+
+      //respuesta JSON indicando que el personaje se ha actualizado correctamente
+      res.json({ msg: 'Book updated successfully', ...oldBook });
   } catch (error) {
-    console.log(error);
-    res.status(500).json(error);
+      res.status(409).json(error);
+      return;
   } finally {
-    if (conn) conn.end();
+      if (conn) conn.end();
   }
 }
-//termina movida
 
-
+/* #####################################  BORRAR  ####################################################3*/  
 
 const deleteUser = async (req = request, res = response) => {
   let conn;
@@ -221,14 +235,14 @@ const deleteUser = async (req = request, res = response) => {
   try {
     conn = await pool.getConnection();
 
-    const [userExists] = await conn.query(
+    const [bookExists] = await conn.query(
       usersModel.getByID,
       [id],
       (err) => { throw err; }
     );
 
-    if (!userExists || userExists.is_active == 0) {
-      res.status(404).json({ msg: 'User not found' });
+    if (!bookExists || bookExists.is_active == 0) {
+      res.status(404).json({ msg: 'Book not found' });
       return;
     }
 
@@ -239,10 +253,10 @@ const deleteUser = async (req = request, res = response) => {
     );
 
     if (userDeleted.affectedRows == 0) {
-      throw new Error({ message: 'Failed to delete user' });
+      throw new Error({ message: 'Failed to delete Book' });
     }
 
-    res.json({ msg: 'User deleted successfully' });
+    res.json({ msg: 'Book deleted successfully' });
 
   } catch (error) {
     console.log(error);
@@ -252,10 +266,14 @@ const deleteUser = async (req = request, res = response) => {
   }
 };
 
+
+/* #####################################  MODULOS  ####################################################3*/  
+
 module.exports = {
-                  listUsers, 
-                  listUserByID, 
-                  addUser, 
-                  updateUser, 
-                  deleteUser, 
-                };
+  listUsers,
+  nameSearch,
+  listUserByID,
+  addUser,
+  updateUser,
+  deleteUser
+};
