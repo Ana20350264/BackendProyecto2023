@@ -1,0 +1,120 @@
+﻿id,Book,Author(s),Original language,First published,Approximate sales in millions,Genre
+1,A Tale of Two Cities,Charles Dickens,English,1859,200,Historical fiction
+2,The Little Prince (Le Petit Prince),Antoine de Saint-Exupéry,French,1943,200,Novella
+3,Harry Potter and the Philosopher's Stone,J. K. Rowling,English,1997,120,Fantasy
+4,And Then There Were None,Agatha Christie,English,1939,100,Mystery
+5,Dream of the Red Chamber (紅樓夢),Cao Xueqin,Chinese,1791,100,Family saga
+6,The Hobbit,J. R. R. Tolkien,English,1937,100,Fantasy
+7,"The Lion, the Witch and the Wardrobe",C. S. Lewis,English,1950,85,"Fantasy, Children's fiction"
+8,She: A History of Adventure,H. Rider Haggard,English,1887,83,Adventure
+9,Vardi Wala Gunda (वर्दी वाला गुंडा),Ved Prakash Sharma,Hindi,1992,80,Detective
+10,The Da Vinci Code,Dan Brown,English,2003,80,Mystery thriller
+11,Harry Potter and the Chamber of Secrets,J. K. Rowling,English,1998,77,Fantasy
+12,Harry Potter and the Prisoner of Azkaban,J. K. Rowling,English,1999,65,Fantasy
+13,Harry Potter and the Goblet of Fire,J. K. Rowling,English,2000,65,Fantasy
+14,Harry Potter and the Order of the Phoenix,J. K. Rowling,English,2003,65,Fantasy
+15,Harry Potter and the Half-Blood Prince,J. K. Rowling,English,2005,65,Fantasy
+16,Harry Potter and the Deathly Hallows,J. K. Rowling,English,2007,65,Fantasy
+17,The Alchemist (O Alquimista),Paulo Coelho,Portuguese,1988,65,Fantasy
+18,The Catcher in the Rye,J. D. Salinger,English,1951,65,Coming-of-age
+19,The Bridges of Madison County,Robert James Waller,English,1992,60,Romance
+20,Ben-Hur: A Tale of the Christ,Lew Wallace,English,1880,50,Historical fiction
+21,You Can Heal Your Life,Louise Hay,English,1984,50,Self-help
+22,One Hundred Years of Solitude (Cien años de soledad),Gabriel García Márquez,Spanish,1967,50,Magic realism
+23,Lolita,Vladimir Nabokov,English,1955,50,Novel
+24,Heidi,Johanna Spyri,German,1880,50,Children's fiction
+25,The Common Sense Book of Baby and Child Care,Benjamin Spock,English,1946,50,Manual
+26,Anne of Green Gables,Lucy Maud Montgomery,English,1908,50,Children's novel
+27,Black Beauty,Anna Sewell,English,1877,50,Children's literature
+28,The Name of the Rose (Il Nome della Rosa),Umberto Eco,Italian,1980,50,"Historical novel, mystery"
+29,The Eagle Has Landed,Jack Higgins,English,1975,50,"War, thriller"
+30,Watership Down,Richard Adams,English,1972,50,Fantasy
+31,The Hite Report,Shere Hite,English,1976,50,Sexology
+32,Charlotte's Web,E. B. White; illustrated by Garth Williams,English,1952,50,Children's fiction
+33,The Ginger Man,J. P. Donleavy,English,1955,50,Novel
+34,The Tale of Peter Rabbit,Beatrix Potter,English,1902,45,Children's Literature
+35,Jonathan Livingston Seagull,Richard Bach,English,1970,44,"Novella, Self-help"
+36,The Very Hungry Caterpillar,Eric Carle,English,1969,43,"Children's Literature, picture book"
+37,A Message to Garcia,Elbert Hubbard,English,1899,40,Essay/Literature
+38,To Kill a Mockingbird,Harper Lee,English,1960,40,"Southern Gothic, Bildungsroman"
+39,Flowers in the Attic,V. C. Andrews,English,1979,40,"Gothic horror, Family saga"
+40,Cosmos,Carl Sagan,English,1980,40,"Popular science, Anthropology, Astrophysics, Cosmology, Philosophy, History"
+41,Sophie's World (Sofies verden),Jostein Gaarder,Norwegian,1991,40,"Philosophical novel, Young adult"
+42,Angels & Demons,Dan Brown,English,2000,39,Mystery-thriller
+43,Kane and Abel,Jeffrey Archer,English,1979,37,Novel
+44,How the Steel Was Tempered (Как закалялась сталь),Nikolai Ostrovsky,Russian,1932,36.4,Socialist realist novel
+45,War and Peace (Война и мир),Leo Tolstoy,Russian,1869,36,Historical novel
+46,The Adventures of Pinocchio (Le avventure di Pinocchio),Carlo Collodi,Italian,1881,35,"Fantasy, Children's fiction"
+47,The Diary of Anne Frank (Het Achterhuis),Anne Frank,Dutch,1947,35,"Historical non-fiction, Autobiography, Memoir, Bildungsroman / Coming of Age, Jewish literature"
+48,Your Erroneous Zones,Wayne Dyer,English,1976,35,Self-help
+49,The Thorn Birds,Colleen McCullough,English,1977,33,Romantic family saga
+50,The Purpose Driven Life,Rick Warren,English,2002,33,Christian literature
+51,The Kite Runner,Khaled Hosseini,English,2003,31.5,"Bildungsroman, Historical fiction"
+52,Valley of the Dolls,Jacqueline Susann,English,1966,31,Novel
+53,Alcoholics Anonymous Big Book,Bill Wilson,English,1939,30,Self-help
+54,How to Win Friends and Influence People,Dale Carnegie,English,1936,30,Self-help
+55,The Great Gatsby,F. Scott Fitzgerald,English,1925,30,"Novel, tragedy"
+56,Gone with the Wind,Margaret Mitchell,English,1936,30,Historical fiction
+57,Rebecca,Daphne du Maurier,English,1938,30,Gothic novel
+58,Nineteen Eighty-Four,George Orwell,English,1949,30,"Dystopian, political fiction, social science fiction"
+59,The Revolt of Mamie Stover,William Bradford Huie,English,1951,30,Fiction
+60,The Girl with the Dragon Tattoo (Män som hatar kvinnor),Stieg Larsson,Swedish,2005,30,Fiction
+61,The Lost Symbol,Dan Brown,English,2009,30,Fiction
+62,The Hunger Games,Suzanne Collins,English,2008,29,Young adult fiction
+63,James and the Giant Peach,Roald Dahl,English,1961,28,Children's novel
+64,The Young Guard (Молодая гвардия),Alexander Alexandrovich Fadeyev,Russian,1945,26,Young adult historical novel
+65,Who Moved My Cheese?,Spencer Johnson,English,1998,29,"Self-help, motivational, business fable, psychology, leadership, parable"
+66,A Brief History of Time,Stephen Hawking,English,1988,25,Popular science
+67,Paul et Virginie,Jacques-Henri Bernardin de Saint-Pierre,French,1788,25,Novel
+68,Lust for Life,Irving Stone,English,1934,25,Biographical novel
+69,The Wind in the Willows,Kenneth Grahame,English,1908,25,Children's literature
+70,The 7 Habits of Highly Effective People,Stephen R. Covey,English,1989,25,Self-help
+71,Virgin Soil Upturned (Поднятая целина),Mikhail Sholokhov,Russian,1935,24,Novel
+72,The Celestine Prophecy,James Redfield,English,1993,23,New-age spiritual novel
+73,The Fault in Our Stars,John Green,English,2012,23,Young adult romantic novel
+74,The Girl on the Train,Paula Hawkins,English,2015,23,Thriller
+75,The Shack,William P. Young,English,2007,22.5,Novel
+76,Uncle Styopa (Дядя Стёпа),Sergey Mikhalkov,Russian,1936,21,"Children's Literature, picture book"
+77,The Godfather,Mario Puzo,English,1969,21,Crime novel
+78,Love Story,Erich Segal,English,1970,21,Romance novel
+79,Catching Fire,Suzanne Collins,English,2009,21,"Young Adult novel, adventure, dystopian, science fiction"
+80,Mockingjay,Suzanne Collins,English,2010,20,"Young Adult novel, adventure, war, science fiction, action thriller"
+81,Kitchen (キッチン),Banana Yoshimoto,Japanese,1988,20,Japanese novel
+82,Andromeda Nebula (Туманность Андромеды),Ivan Yefremov,Russian,1957,20,Science fiction novel
+83,Autobiography of a Yogi (योगी कथामृत),Paramahansa Yogananda,Hindi,1946,20,Autobiography
+84,Gone Girl,Gillian Flynn,English,2012,20,Crime thriller novel
+85,All Quiet on the Western Front (Im Westen nichts Neues),Erich Maria Remarque,German,1929,20,War novel
+86,The Bermuda Triangle,Charles Berlitz,English,1974,20,
+87,Things Fall Apart ,Chinua Achebe,English,1958,20,Novel
+88,Animal Farm ,George Orwell,English,1945,20,"Satirical allegorical novella, Political satire, Dystopian Fiction, Roman à clef"
+89,Wolf Totem (狼图腾),Jiang Rong,Chinese,2004,20,Semi-autobiographical novel
+90,The Happy Hooker: My Own Story,Xaviera Hollander,English,1971,20,Memoir
+91,Jaws,Peter Benchley,English,1974,20,Thriller
+92,Love You Forever,Robert Munsch,English,1986,20,"Children's literature, picture book, fiction"
+93,The Women's Room,Marilyn French,English,1977,20,Feminist novel
+94,What to Expect When You're Expecting,Arlene Eisenberg and Heidi Murkoff,English,1984,20,Pregnancy guide
+95,Adventures of Huckleberry Finn,Mark Twain,English,1885,20,"Picaresque novel, Bildungsroman, satire, Robinsonade"
+96,"The Secret Diary of Adrian Mole, Aged 13¾",Sue Townsend,English,1982,20,Young adult novel
+97,Pride and Prejudice,Jane Austen,English,1813,20,"Classic regency novel, romance"
+98,Kon-Tiki: Across the Pacific in a Raft (Kon-Tiki ekspedisjonen),Thor Heyerdahl,Norwegian,1950,20,Travel literature
+99,The Good Soldier Švejk (Osudy dobrého vojáka Švejka za světové války),Jaroslav Hašek,Czech,1923,20,Unfinished satirical dark comedy novel
+100,Where the Wild Things Are,Maurice Sendak,English,1963,20,Children's picture book
+101,The Power of Positive Thinking,Norman Vincent Peale,English,1952,20,Self-help
+102,The Secret,Rhonda Byrne,English,2006,20,Self-help
+103,Fear of Flying,Erica Jong,English,1973,20,Romantic novel
+104,Dune,Frank Herbert,English,1965,20,Science fiction novel
+105,Charlie and the Chocolate Factory,Roald Dahl,English,1964,20,Children's fantasy novel
+106,The Naked Ape,Desmond Morris,English,1968,20,"Social Science, Anthropology, Psychology"
+107,Where the Crawdads Sing,Delia Owens,English,2018,18,Coming-of-age Murder mystery
+108,"Totto-chan, the Little Girl at the Window (窓ぎわのトットちゃん)",Tetsuko Kuroyanagi,Japanese,1981,18,Autobiographical novel
+109,Matilda,Roald Dahl,English,1988,17,Children's Literature
+110,The Book Thief,Markus Zusak,English,2005,16,Young Adult Fiction
+111,Goodnight Moon,Margaret Wise Brown,English,1947,16,Children's Literature
+112,The Neverending Story (Die unendliche Geschichte),Michael Ende,German,1979,16,Children's Literature
+113,All the Light We Cannot See,Anthony Doerr,English,2014,15.3,"Historical fiction, war novel"
+114,Fifty Shades of Grey,E. L. James,English,2011,15.2,Erotica
+115,The Pillars of the Earth,Ken Follett,English,1989,15,Historical fiction
+116,The Hitchhiker's Guide to the Galaxy,Douglas Adams,English,1979,14,Science fiction
+117,The Giver,Lois Lowry,English,1993,12,Dystopian fiction
+118,The Exorcist,William Peter Blatty,English,1971,11,Horror
+119,Fifty Shades Darker,E. L. James,English,2012,10.4,Erotica
