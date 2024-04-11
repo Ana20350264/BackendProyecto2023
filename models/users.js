@@ -72,7 +72,21 @@ DELETE FROM
     best_selling
 WHERE
     id = ?
-`
+`,
+
+updatePartialRow: `
+    UPDATE 
+        best_selling
+    SET
+        Book = IFNULL(?, Book),
+        Authors = IFNULL(?, Authors),
+        Original_language = IFNULL(?, Original_language),
+        First_published = IFNULL(?, First_published),
+        Approximate_sales_in_millions = IFNULL(?, Approximate_sales_in_millions),
+        Genre = IFNULL(?, Genre)
+    WHERE
+        id = ?
+`,
 }
 
 module.exports = usersModel;

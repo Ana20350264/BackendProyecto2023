@@ -264,7 +264,64 @@ const deleteUser = async (req = request, res = response) => {
   } finally {
     if (conn) conn.end();
   }
-};
+}
+
+/* ########################## ACTUALIZACION PARCIAL ##########################################*/
+  const partialUpdateUser = async (req = request, res = response) => {
+    let conn;
+    const { id } = req.params;
+  
+    if (isNaN(id)) {
+      res.status(400).json({ msg: 'Invalid ID' });
+      return;
+    }
+  
+    const {
+      Book,
+      Authors,
+      Original_language,
+      First_published,
+      Approximate_sales_in_millions,
+      Genre
+    } = req.body;
+  
+    let userUpdates = {};
+    if (Book) userUpdates.Book = Book;
+    if (Authors) userUpdates.Authors = Authors;
+    if (Original_language) userUpdates.Original_language = Original_language;
+    if (First_published) userUpdates.First_published = First_published;
+    if (Approximate_sales_in_millions) userUpdates.Approximate_sales_in_millions = Approximate_sales_in_millions;
+    if (Genre) userUpdates.Genre = Genre;
+  
+    try {
+      conn = await pool.getConnection();
+  
+      const [userExists] = await conn.query(
+        usersModel.getByID,
+        [id],
+        (err) => { throw err; }
+      );
+  
+      if (!userExists) {
+        res.status(404).json({ msg: 'User not found' });
+        return;
+      }
+  
+      let updatedUser = { ...userExists, ...userUpdates };
+  
+      await conn.query(
+        usersModel.partialUpdateRow,
+        [updatedUser.Book, updatedUser.Authors, updatedUser.Original_language, updatedUser.First_published, updatedUser.Approximate_sales_in_millions, updatedUser.Genre, id]
+      );
+  
+      res.json({ msg: 'User partially updated successfully', updatedUser });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json(error);
+    } finally {
+      if (conn) conn.end();
+    }
+  };  
 
 
 /* #####################################  MODULOS  ####################################################3*/  
@@ -275,5 +332,6 @@ module.exports = {
   listUserByID,
   addUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  partialUpdateUser
 };

@@ -4,7 +4,8 @@ const {listUsers,
         listUserByID, 
         addUser, 
         updateUser, 
-        deleteUser 
+        deleteUser,
+        partialUpdateUser
         } = require('../controllers/users');
 
 
@@ -17,5 +18,6 @@ router.get('/:id', listUserByID);
 router.put('/', addUser);
 router.patch('/:id', updateUser);
 router.delete('/:id', deleteUser);
+router.patch('/:id', partialUpdateUser);
 
 module.exports = router;
