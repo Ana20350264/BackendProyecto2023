@@ -1,4 +1,4 @@
-﻿id,Book,Author(s),Original language,First published,Approximate sales in millions,Genre
+"id","Book","Authors","Original_language","First_published","Approximate_sales_in_millions","Genre"
 1,A Tale of Two Cities,Charles Dickens,English,1859,200,Historical fiction
 2,The Little Prince (Le Petit Prince),Antoine de Saint-Exupéry,French,1943,200,Novella
 3,Harry Potter and the Philosopher's Stone,J. K. Rowling,English,1997,120,Fantasy
@@ -42,14 +42,14 @@
 41,Sophie's World (Sofies verden),Jostein Gaarder,Norwegian,1991,40,"Philosophical novel, Young adult"
 42,Angels & Demons,Dan Brown,English,2000,39,Mystery-thriller
 43,Kane and Abel,Jeffrey Archer,English,1979,37,Novel
-44,How the Steel Was Tempered (Как закалялась сталь),Nikolai Ostrovsky,Russian,1932,36.4,Socialist realist novel
+44,How the Steel Was Tempered (Как закалялась сталь),Nikolai Ostrovsky,Russian,1932,36,Socialist realist novel
 45,War and Peace (Война и мир),Leo Tolstoy,Russian,1869,36,Historical novel
 46,The Adventures of Pinocchio (Le avventure di Pinocchio),Carlo Collodi,Italian,1881,35,"Fantasy, Children's fiction"
 47,The Diary of Anne Frank (Het Achterhuis),Anne Frank,Dutch,1947,35,"Historical non-fiction, Autobiography, Memoir, Bildungsroman / Coming of Age, Jewish literature"
 48,Your Erroneous Zones,Wayne Dyer,English,1976,35,Self-help
 49,The Thorn Birds,Colleen McCullough,English,1977,33,Romantic family saga
 50,The Purpose Driven Life,Rick Warren,English,2002,33,Christian literature
-51,The Kite Runner,Khaled Hosseini,English,2003,31.5,"Bildungsroman, Historical fiction"
+51,The Kite Runner,Khaled Hosseini,English,2003,31,"Bildungsroman, Historical fiction"
 52,Valley of the Dolls,Jacqueline Susann,English,1966,31,Novel
 53,Alcoholics Anonymous Big Book,Bill Wilson,English,1939,30,Self-help
 54,How to Win Friends and Influence People,Dale Carnegie,English,1936,30,Self-help
@@ -73,7 +73,7 @@
 72,The Celestine Prophecy,James Redfield,English,1993,23,New-age spiritual novel
 73,The Fault in Our Stars,John Green,English,2012,23,Young adult romantic novel
 74,The Girl on the Train,Paula Hawkins,English,2015,23,Thriller
-75,The Shack,William P. Young,English,2007,22.5,Novel
+75,The Shack,William P. Young,English,2007,22,Novel
 76,Uncle Styopa (Дядя Стёпа),Sergey Mikhalkov,Russian,1936,21,"Children's Literature, picture book"
 77,The Godfather,Mario Puzo,English,1969,21,Crime novel
 78,Love Story,Erich Segal,English,1970,21,Romance novel
@@ -84,7 +84,7 @@
 83,Autobiography of a Yogi (योगी कथामृत),Paramahansa Yogananda,Hindi,1946,20,Autobiography
 84,Gone Girl,Gillian Flynn,English,2012,20,Crime thriller novel
 85,All Quiet on the Western Front (Im Westen nichts Neues),Erich Maria Remarque,German,1929,20,War novel
-86,The Bermuda Triangle,Charles Berlitz,English,1974,20,
+86,The Bermuda Triangle,Charles Berlitz,English,1974,20,""
 87,Things Fall Apart ,Chinua Achebe,English,1958,20,Novel
 88,Animal Farm ,George Orwell,English,1945,20,"Satirical allegorical novella, Political satire, Dystopian Fiction, Roman à clef"
 89,Wolf Totem (狼图腾),Jiang Rong,Chinese,2004,20,Semi-autobiographical novel
@@ -111,10 +111,9 @@
 110,The Book Thief,Markus Zusak,English,2005,16,Young Adult Fiction
 111,Goodnight Moon,Margaret Wise Brown,English,1947,16,Children's Literature
 112,The Neverending Story (Die unendliche Geschichte),Michael Ende,German,1979,16,Children's Literature
-113,All the Light We Cannot See,Anthony Doerr,English,2014,15.3,"Historical fiction, war novel"
-114,Fifty Shades of Grey,E. L. James,English,2011,15.2,Erotica
+113,All the Light We Cannot See,Anthony Doerr,English,2014,15,"Historical fiction, war novel"
+114,Fifty Shades of Grey,E. L. James,English,2011,15,Erotica
 115,The Pillars of the Earth,Ken Follett,English,1989,15,Historical fiction
 116,The Hitchhiker's Guide to the Galaxy,Douglas Adams,English,1979,14,Science fiction
 117,The Giver,Lois Lowry,English,1993,12,Dystopian fiction
-118,The Exorcist,William Peter Blatty,English,1971,11,Horror
-119,Fifty Shades Darker,E. L. James,English,2012,10.4,Erotica
+127,Ciudad medialuna. Casa de flama y sombra,Sarah J. Mass,Ingles,2020,35,Fantasia Oscura
